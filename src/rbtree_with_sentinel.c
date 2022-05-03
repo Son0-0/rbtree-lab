@@ -346,6 +346,8 @@ int rbtree_erase(rbtree *t, node_t *z) {
   if (y_original_color == RBTREE_BLACK) {
     rb_erase_fixup(t, x);
   }
+  
+  free(z);
 
   return 0;
 }
