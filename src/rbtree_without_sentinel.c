@@ -1,7 +1,6 @@
 #include "rbtree.h"
 #include <assert.h>
 #include <stdlib.h>
-#include <stdio.h>
 
 rbtree *new_rbtree(void) {
   rbtree *p = (rbtree *)calloc(1, sizeof(rbtree));
@@ -27,8 +26,7 @@ void pdelete(node_t* root) {
 
 void delete_rbtree(rbtree *t) {
   // TODO: reclaim the tree nodes's memory
-  node_t *temp = create_node();
-  temp = t->root;
+  node_t *temp = t->root;
 
   pdelete(temp);
   free(t);
