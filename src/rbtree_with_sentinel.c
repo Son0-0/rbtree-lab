@@ -1,5 +1,4 @@
 #include "rbtree.h"
-#include <stdio.h> // 제출시 삭제
 #include <stdlib.h>
 
 rbtree *new_rbtree(void) {
@@ -364,14 +363,4 @@ int rbtree_to_array(const rbtree *t, key_t *arr, const size_t n) {
   // TODO: implement to_array
   make_array_inorder(t->nil, t->root, arr, 0);
   return 0;
-}
-
-void inorder(rbtree *t, node_t *cur) {
-  if (cur == t->nil) {
-    return;
-  }
-
-  inorder(t, cur->left);
-  printf("%d (%d) / ", cur->key, cur->color);
-  inorder(t, cur->right);
 }
